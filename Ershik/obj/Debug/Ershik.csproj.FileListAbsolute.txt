@@ -1,0 +1,96 @@
+C:\Users\oleg\Desktop\Ershik\Ershik\bin\Debug\Ershik.exe.config
+C:\Users\oleg\Desktop\Ershik\Ershik\bin\Debug\Ershik.exe
+C:\Users\oleg\Desktop\Ershik\Ershik\bin\Debug\Ershik.pdb
+C:\Users\oleg\Desktop\Ershik\Ershik\obj\Debug\Ershik.csproj.AssemblyReference.cache
+C:\Users\oleg\Desktop\Ershik\Ershik\obj\Debug\Ershik.csproj.SuggestedBindingRedirects.cache
+C:\Users\oleg\Desktop\Ershik\Ershik\obj\Debug\MainWindow.g.cs
+C:\Users\oleg\Desktop\Ershik\Ershik\obj\Debug\App.g.cs
+C:\Users\oleg\Desktop\Ershik\Ershik\obj\Debug\Ershik_MarkupCompile.cache
+C:\Users\oleg\Desktop\Ershik\Ershik\obj\Debug\Ershik_MarkupCompile.lref
+C:\Users\oleg\Desktop\Ershik\Ershik\obj\Debug\MainWindow.baml
+C:\Users\oleg\Desktop\Ershik\Ershik\obj\Debug\Ershik.g.resources
+C:\Users\oleg\Desktop\Ershik\Ershik\obj\Debug\Ershik.Properties.Resources.resources
+C:\Users\oleg\Desktop\Ershik\Ershik\obj\Debug\Ershik.csproj.GenerateResource.cache
+C:\Users\oleg\Desktop\Ershik\Ershik\obj\Debug\Ershik.csproj.CoreCompileInputs.cache
+C:\Users\oleg\Desktop\Ershik\Ershik\obj\Debug\Ershik.exe
+C:\Users\oleg\Desktop\Ershik\Ershik\obj\Debug\Ershik.pdb
+C:\Users\oleg\Desktop\Ershik\Ershik\bin\Debug\Microsoft.Win32.Registry.dll
+C:\Users\oleg\Desktop\Ershik\Ershik\bin\Debug\NAudio.Asio.dll
+C:\Users\oleg\Desktop\Ershik\Ershik\bin\Debug\NAudio.Core.dll
+C:\Users\oleg\Desktop\Ershik\Ershik\bin\Debug\NAudio.dll
+C:\Users\oleg\Desktop\Ershik\Ershik\bin\Debug\NAudio.Midi.dll
+C:\Users\oleg\Desktop\Ershik\Ershik\bin\Debug\NAudio.Wasapi.dll
+C:\Users\oleg\Desktop\Ershik\Ershik\bin\Debug\NAudio.WinForms.dll
+C:\Users\oleg\Desktop\Ershik\Ershik\bin\Debug\NAudio.WinMM.dll
+C:\Users\oleg\Desktop\Ershik\Ershik\bin\Debug\System.Security.AccessControl.dll
+C:\Users\oleg\Desktop\Ershik\Ershik\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\oleg\Desktop\Ershik\Ershik\bin\Debug\Microsoft.Win32.Registry.xml
+C:\Users\oleg\Desktop\Ershik\Ershik\bin\Debug\NAudio.xml
+C:\Users\oleg\Desktop\Ershik\Ershik\bin\Debug\NAudio.Asio.xml
+C:\Users\oleg\Desktop\Ershik\Ershik\bin\Debug\NAudio.Core.xml
+C:\Users\oleg\Desktop\Ershik\Ershik\bin\Debug\NAudio.Midi.xml
+C:\Users\oleg\Desktop\Ershik\Ershik\bin\Debug\NAudio.Wasapi.xml
+C:\Users\oleg\Desktop\Ershik\Ershik\bin\Debug\NAudio.WinForms.xml
+C:\Users\oleg\Desktop\Ershik\Ershik\bin\Debug\NAudio.WinMM.xml
+C:\Users\oleg\Desktop\Ershik\Ershik\bin\Debug\System.Security.AccessControl.xml
+C:\Users\oleg\Desktop\Ershik\Ershik\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\oleg\Desktop\Ershik\Ershik\obj\Debug\Ershik.csproj.CopyComplete
+C:\Users\oleg\Desktop\Ershik\Ershik\obj\Debug\Choose_Audio_Device.g.cs
+C:\Users\oleg\Desktop\Ershik\Ershik\obj\Debug\Choose_Audio_Device.baml
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Debug\Ershik.exe.config
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Debug\Ershik.exe
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Debug\Ershik.pdb
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Debug\Microsoft.Win32.Registry.dll
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Debug\NAudio.Asio.dll
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Debug\NAudio.Core.dll
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Debug\NAudio.dll
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Debug\NAudio.Midi.dll
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Debug\NAudio.Wasapi.dll
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Debug\NAudio.WinForms.dll
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Debug\NAudio.WinMM.dll
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Debug\System.Security.AccessControl.dll
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Debug\System.Security.Principal.Windows.dll
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Debug\Microsoft.Win32.Registry.xml
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Debug\NAudio.xml
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Debug\NAudio.Asio.xml
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Debug\NAudio.Core.xml
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Debug\NAudio.Midi.xml
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Debug\NAudio.Wasapi.xml
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Debug\NAudio.WinForms.xml
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Debug\NAudio.WinMM.xml
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Debug\System.Security.AccessControl.xml
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Debug\System.Security.Principal.Windows.xml
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\Ershik.csproj.AssemblyReference.cache
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\Ershik.csproj.SuggestedBindingRedirects.cache
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\Choose_Audio_Device.g.cs
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\MainWindow.g.cs
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\App.g.cs
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\Ershik_MarkupCompile.cache
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\Ershik_MarkupCompile.lref
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\Choose_Audio_Device.baml
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\MainWindow.baml
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\Ershik.g.resources
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\Ershik.Properties.Resources.resources
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\Ershik.csproj.GenerateResource.cache
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\Ershik.csproj.CoreCompileInputs.cache
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\Ershik.csproj.CopyComplete
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\Ershik.exe
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\Ershik.pdb
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\Elements_style.baml
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\App.baml
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\Phrase_Editor.g.cs
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\Script_Editor.g.cs
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\Phrase_Editor.baml
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\Script_Editor.baml
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\Current_Phrase_Editor.g.cs
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\Current_Phrase_Editor.baml
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\Add_Phrase.g.cs
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\Add_Phrase.baml
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\Edit_Phrase.g.cs
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\Edit_Phrase.baml
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\Phrases\Add_Phrase.g.cs
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\Scripts\Add_Script.g.cs
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\Phrases\Edit_Phrase.g.cs
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\Scripts\Edit_Script.g.cs
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\Phrases\Phrase_Editor.g.cs
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\Scripts\Script_Editor.g.cs
