@@ -26,7 +26,7 @@ namespace Ershik
             InitializeComponent();
             script = old_script;
             desc = old_desc;
-            script.Text = script;
+            Script.Text = script;
             Desc.Text = old_desc;
         }
 
@@ -34,7 +34,7 @@ namespace Ershik
         {
             try
             {
-                Database_interaction.Change.Change_Script(script, script.Text, Desc.Text);
+                Database_interaction.Change.Change_Script(script, Script.Text, Desc.Text);
                 this.DialogResult = true;
             }
             catch

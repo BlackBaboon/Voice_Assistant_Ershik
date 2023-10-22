@@ -86,11 +86,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Bindings.xaml.cs">
+      <DependentUpon>Bindings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\Command_Editor.xaml.cs">
+      <DependentUpon>Command_Editor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Phrases\Add_Phrase.xaml.cs">
       <DependentUpon>Add_Phrase.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Current_Phrase_Editor.xaml.cs">
-      <DependentUpon>Current_Phrase_Editor.xaml</DependentUpon>
     </Compile>
     <Compile Include="Database_interaction.cs" />
     <Compile Include="Phrases\Edit_Phrase.xaml.cs">
@@ -105,15 +108,19 @@
     <Compile Include="Scripts\Script_Editor.xaml.cs">
       <DependentUpon>Script_Editor.xaml</DependentUpon>
     </Compile>
+    <Page Include="Bindings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Scripts\Command_Editor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Phrases\Add_Phrase.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Choose_Audio_Device.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Current_Phrase_Editor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -136,7 +143,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Elements_style.xaml">
+    <Page Include="Styles\Elements_style.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -186,6 +193,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Down_Arrow.png" />
+    <Resource Include="Images\Up_Arrow.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

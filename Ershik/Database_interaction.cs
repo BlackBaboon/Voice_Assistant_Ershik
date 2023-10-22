@@ -90,10 +90,10 @@ namespace Ershik
                 App.Connection.Close();
             }
 
-            public static void Delete_Command(string script, int number)
+            public static void Delete_Commands(string script)
             {
-                SqlCommand cmd = new SqlCommand($"exec Delete_Command " +
-                    $"'{App.Current_profile_name}','{script}','{number}'", App.Connection);
+                SqlCommand cmd = new SqlCommand($"exec Delete_Commands " +
+                    $"'{App.Current_profile_name}','{script}'", App.Connection);
 
                 App.Connection.Open();
                 cmd.ExecuteNonQuery();
@@ -139,6 +139,40 @@ namespace Ershik
                 App.Connection.Open();
                 cmd.ExecuteNonQuery();
                 App.Connection.Close();
+            }
+        }
+        public static class Get
+        {
+            public static List<string> Get_Command(string script)
+            {
+                List<string> Commands = new List<string>();
+                SqlCommand cmd = new SqlCommand($"select Command from Command_sequence where " +
+                    $"Profile_name = '{App.Current_profile_name}' and " +
+                    $"Script_Caption = '{script}'", App.Connection);
+
+                App.Connection.Open();
+                var r = cmd.ExecuteReader();
+                while (r.Read())
+                {
+                   Commands.Add(r.GetString(0));
+                }
+                App.Connection.Close();
+                return Commands;
+            }
+            public static List<string> Get_Credentials()
+            {
+                List<string> Credentials = new List<string>();
+                SqlCommand cmd = new SqlCommand($"select " +
+                    $"Login, CONVERT(nvarchar(24), DECRYPTBYASYMKEY(ASYMKEY_ID('LoginInformationKey'), Password, N'14881488')) from Profile where " +
+                    $"Profile_name = '{App.Current_profile_name}'", App.Connection);
+
+                App.Connection.Open();
+                var r = cmd.ExecuteReader();
+                r.Read();
+                Credentials.Add(r.GetString(0));
+                Credentials.Add(r.GetString(1));
+                App.Connection.Close();
+                return Credentials;
             }
         }
     }

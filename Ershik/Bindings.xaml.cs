@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Ershik
 {
     /// <summary>
-    /// Логика взаимодействия для Current_Phrase_Editor.xaml
+    /// Логика взаимодействия для Bindings.xaml
     /// </summary>
-    public partial class Current_Phrase_Editor : Window
+    public partial class Bindings : Page
     {
-        public Current_Phrase_Editor()
+        public Bindings()
         {
             InitializeComponent();
         }

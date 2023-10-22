@@ -113,7 +113,7 @@ namespace Ershik
 
         private void Bind_btn_Click(object sender, RoutedEventArgs e)
         {
-
+            App.MainFrame.Navigate(new Bindings());
         }
 
         private void ChangeProfile_btn_Click(object sender, RoutedEventArgs e)

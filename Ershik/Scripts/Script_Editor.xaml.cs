@@ -13,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Diagnostics;
+using System.Security;
 
 namespace Ershik
 {
@@ -61,11 +63,15 @@ namespace Ershik
                 Delete_Button.Visibility = Visibility.Hidden;
                 Script.Visibility = Visibility.Hidden;
                 Description.Visibility = Visibility.Hidden;
+                Open_Editor_Button.Visibility = Visibility.Hidden;
+                Test_Button.Visibility = Visibility.Hidden;
 
                 Edit_Button1.Visibility = Visibility.Hidden;
                 Delete_Button1.Visibility = Visibility.Hidden;
                 Script1.Visibility = Visibility.Hidden;
                 Description1.Visibility = Visibility.Hidden;
+                Open_Editor_Button1.Visibility = Visibility.Hidden;
+                Test_Button1.Visibility = Visibility.Hidden;
 
                 return;
             }
@@ -78,6 +84,8 @@ namespace Ershik
                 Delete_Button.Visibility = Visibility.Visible;
                 Script.Visibility = Visibility.Visible;
                 Description.Visibility = Visibility.Visible;
+                Open_Editor_Button.Visibility = Visibility.Visible;
+                Test_Button.Visibility = Visibility.Visible;
             }
 
             Script.Text = Scripts[Page * 2][0];
@@ -89,6 +97,8 @@ namespace Ershik
                 Delete_Button1.Visibility = Visibility.Hidden;
                 Script1.Visibility = Visibility.Hidden;
                 Description1.Visibility = Visibility.Hidden;
+                Open_Editor_Button1.Visibility = Visibility.Hidden;
+                Test_Button1.Visibility = Visibility.Hidden;
 
                 Script1.Text = "";
                 Description1.Text = "";
@@ -99,6 +109,8 @@ namespace Ershik
                 Delete_Button1.Visibility = Visibility.Visible;
                 Script1.Visibility = Visibility.Visible;
                 Description1.Visibility = Visibility.Visible;
+                Open_Editor_Button1.Visibility = Visibility.Visible;
+                Test_Button1.Visibility = Visibility.Visible;
 
                 Script1.Text = Scripts[Page * 2 + 1][0];
                 Description1.Text = Scripts[Page * 2 + 1][1];
@@ -173,6 +185,111 @@ namespace Ershik
                 Load_Scripts();
                 Load_Page();
             }
+        }
+        private void Open_Editor_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Command_Editor edit = new Command_Editor(Script.Text);
+            edit.ShowDialog();
+        }
+        private void Open_Editor_Button1_Click(object sender, RoutedEventArgs e)
+        {
+            Command_Editor edit = new Command_Editor(Script1.Text);
+            edit.ShowDialog();
+            if (edit.DialogResult == true)
+                MessageBox.Show("Изменения успешно внесены");
+        }
+
+        private void Test_Click(object sender, RoutedEventArgs e)
+        {
+            List<string> Commands;
+            List<string> Credentials;
+            if (((Button)sender).Name == "Test_Button")
+            {
+                Commands = Database_interaction.Get.Get_Command(Script.Text);
+                Credentials = Database_interaction.Get.Get_Credentials();
+            }
+            else
+            {
+                Commands = Database_interaction.Get.Get_Command(Script1.Text);
+                Credentials = Database_interaction.Get.Get_Credentials();
+            }
+            string output_errors = "";
+            if (Credentials[0] == "")
+            {
+
+                foreach (var cmd_command in Commands)
+                {
+                    using (Process P = new Process())
+                    {
+                        P.StartInfo.FileName = "cmd.exe";
+                        P.StartInfo.RedirectStandardInput = true;
+                        P.StartInfo.RedirectStandardOutput = true;
+                        P.StartInfo.CreateNoWindow = true;
+                        P.StartInfo.UseShellExecute = false;
+                        P.StartInfo.RedirectStandardOutput = true;
+                        P.StartInfo.RedirectStandardError = true;
+                        P.StartInfo.StandardOutputEncoding = Encoding.GetEncoding(866);
+                        P.StartInfo.StandardErrorEncoding = Encoding.GetEncoding(866);
+
+                        P.Start();
+
+                        P.StandardInput.WriteLine(cmd_command);
+                        P.StandardInput.Flush();
+                        P.StandardInput.Close();
+                        while (!P.StandardError.EndOfStream)
+                        {
+                            output_errors += cmd_command + " " + P.StandardError.ReadLine() + "\n";
+                        }
+                        P.WaitForExit();
+                    }
+                }
+            }
+            else
+            {
+                foreach (var cmd_command in Commands)
+                {
+                    SecureString password = new SecureString();
+                    foreach (char ch in Credentials[1]) password.AppendChar(ch);
+                    using (Process P = new Process())
+                    {
+                        P.StartInfo.UserName = Credentials[0];
+                        P.StartInfo.Password = password;
+                        P.StartInfo.FileName = "cmd.exe";
+                        P.StartInfo.RedirectStandardInput = true;
+                        P.StartInfo.RedirectStandardOutput = true;
+                        P.StartInfo.CreateNoWindow = true;
+                        P.StartInfo.UseShellExecute = false; 
+                        P.StartInfo.RedirectStandardOutput = true;
+                        P.StartInfo.RedirectStandardError = true;
+                        P.StartInfo.StandardOutputEncoding = Encoding.GetEncoding(866);
+                        P.StartInfo.StandardErrorEncoding = Encoding.GetEncoding(866);
+                        P.Start();
+
+                        P.StandardInput.WriteLine(cmd_command);
+                        P.StandardInput.Flush();
+                        P.StandardInput.Close();
+                        while (!P.StandardError.EndOfStream)
+                        {
+                            output_errors += cmd_command + " " + P.StandardError.ReadLine() + "\n";
+                        }
+                        P.WaitForExit();
+                    }
+                }
+            }
+
+            if (output_errors == "")
+                MessageBox.Show("Скрипт выполнен");
+            else
+            {
+                MessageBoxResult result = MessageBox.Show("При выполнении скрипта были обнаружены ошибки, желаете их посмотреть?", "Найдены ошибки",
+                    MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+                if (result == MessageBoxResult.Yes)
+                {
+                    MessageBox.Show(output_errors);
+                }
+            }
+
         }
     }
 }

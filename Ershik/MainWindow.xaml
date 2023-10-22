@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         ResizeMode="NoResize"
         Background="#FFDAFFFA"
-        Title="MainWindow" Height="720" Width="1280">
+        Title="ToiletErshik" Height="720" Width="1280">
     <Grid>
         <Frame x:Name="TitleFrame" Content="Frame" Margin="382,0,-1,0" NavigationUIVisibility="Hidden" Width="899" Background="#FF74FFEF"/>
         <Button x:Name="Phrase_btn" BorderThickness="2" Style="{DynamicResource RoundedButtonStyle}"  Content="Фразы" HorizontalAlignment="Left" Margin="59,119,0,0" VerticalAlignment="Top" Height="42" Width="230" FontSize="20" Click="Phrase_btn_Click" Background="#FFFFF58C" BorderBrush="Black"/>

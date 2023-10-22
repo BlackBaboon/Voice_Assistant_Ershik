@@ -27,7 +27,7 @@ namespace Ershik
         {
             try
             {
-                Database_interaction.Add.Insert_Phrase(Phrase.Text, Desc.Text);
+                Database_interaction.Add.Insert_Script(Script.Text, Desc.Text);
                 this.DialogResult = true;
             }
             catch
