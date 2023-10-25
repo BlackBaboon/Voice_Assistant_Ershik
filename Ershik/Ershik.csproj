@@ -89,6 +89,12 @@
     <Compile Include="Bindings.xaml.cs">
       <DependentUpon>Bindings.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Profiles\Insert_Profile.xaml.cs">
+      <DependentUpon>Insert_Profile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Profiles\Choose_Profile.xaml.cs">
+      <DependentUpon>Choose_Profile.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Scripts\Command_Editor.xaml.cs">
       <DependentUpon>Command_Editor.xaml</DependentUpon>
     </Compile>
@@ -109,6 +115,14 @@
       <DependentUpon>Script_Editor.xaml</DependentUpon>
     </Compile>
     <Page Include="Bindings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Profiles\Insert_Profile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Profiles\Choose_Profile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -197,6 +211,10 @@
   <ItemGroup>
     <Resource Include="Images\Down_Arrow.png" />
     <Resource Include="Images\Up_Arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Left_Arrow.png" />
+    <Resource Include="Images\Right_Arrow.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

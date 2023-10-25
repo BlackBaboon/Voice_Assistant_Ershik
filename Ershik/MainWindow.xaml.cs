@@ -36,15 +36,24 @@ namespace Ershik
     /// </summary>
     public partial class MainWindow : Window
     {
+        string voice_to_text = "";
+        bool on_write = false;
+        int counter = 0;
+        List<string> All_Phrases = Database_interaction.Get.Get_Phrases().Select(x => x[0].ToLower()).ToList();
         WaveIn waveIn;
         WaveFileWriter writer;
         string outputFilename = "demo0.wav";
         public MainWindow()
         {
+            Choose_Profile profile = new Choose_Profile();
+            profile.ShowDialog();
+            if (profile.DialogResult == false)
+                Application.Current.Shutdown();
+
             InitializeComponent();
             App.MainFrame = TitleFrame;
             Phrase_btn_Click(null, null);
-            Speech_Recognize();
+            //Speech_Recognize();
         }
 
         private async void Speech_Recognize()
@@ -83,7 +92,8 @@ namespace Ershik
         }
         private async Task VoiceToText()
         {
-            WebRequest request = WebRequest.Create("https://www.google.com/speech-api/v2/recognize?output=json&lang=ru-RU&key=AIzaSyBOti4mM-6x9WDnZIjIeyEU21OpBXqWBgw");
+            
+            WebRequest request = WebRequest.Create("");
             request.Method = "POST";
             byte[] byteArray = File.ReadAllBytes(outputFilename);
             request.ContentType = "audio/l16; rate=16000";
@@ -95,7 +105,34 @@ namespace Ershik
 
             string strtrs = reader.ReadToEnd();
             var rg = new Regex(@"transcript" + '"' + ":" + '"' + "([A-Z, А-Я, a-z,а-я, ,0-9]*)");
-            var result = rg.Match(strtrs).Groups[1].Value;
+
+            if (!on_write)
+            {
+                voice_to_text = rg.Match(strtrs).Groups[1].Value+" ";
+            }
+            else
+            {
+                voice_to_text += rg.Match(strtrs).Groups[1].Value+" ";
+                counter++;
+                foreach(var r in All_Phrases)
+                {
+                    if (voice_to_text.ToLower().Contains(r.ToLower()))
+                    {
+                        Database_interaction.Execute.Execute_Phrase(r,false);
+                    }
+
+                }
+                if(counter == 3)
+                {
+                    on_write=false;
+                    voice_to_text = "";
+                }
+            }
+            if(voice_to_text.ToLower().Contains("ёршик") & !on_write)
+            {
+                counter = 0;
+                on_write = true;
+            }
 
             reader.Close();
             response.Close();
@@ -118,7 +155,12 @@ namespace Ershik
 
         private void ChangeProfile_btn_Click(object sender, RoutedEventArgs e)
         {
-
+            Choose_Profile profile = new Choose_Profile();
+            profile.ShowDialog();
+            if(profile.DialogResult == true)
+            {
+                Phrase_btn_Click(null, null);
+            }
         }
 
         private void Settings_btn_Click(object sender, RoutedEventArgs e)

@@ -5,10 +5,54 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Ershik"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="704" d:DesignWidth="920"
       Title="Bindings">
 
     <Grid>
-        
+        <ComboBox FontSize="18" x:Name="Phrases" HorizontalAlignment="Left" Margin="186,111,0,0" VerticalAlignment="Top" Width="245" Height="50" SelectionChanged="Phrases_SelectionChanged"/>
+        <ComboBox FontSize="18" x:Name="Scripts" HorizontalAlignment="Left" Margin="481,111,0,0" VerticalAlignment="Top" Width="245" Height="50"/>
+        <TextBlock HorizontalAlignment="Left" Margin="186,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="36" Width="111" FontSize="18"><Run Language="ru-ru" Text="Фразы"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="481,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="36" Width="245" FontSize="18" TextAlignment="Right"><Run Language="ru-ru" Text="Скрипты"/></TextBlock>
+        <Button x:Name="Bind_Button" Style="{DynamicResource RoundedButtonStyle}" Content="Связать" HorizontalAlignment="Left" Margin="370,183,0,0" VerticalAlignment="Top" Height="52" Width="148" Click="Bind_Button_Click"/>
+        <ComboBox FontSize="18" x:Name="Binds" HorizontalAlignment="Left" Margin="198,368,0,0" VerticalAlignment="Top" Width="278" Height="52"/>
+        <TextBlock HorizontalAlignment="Left" Margin="198,326,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="37" Width="278" FontSize="18" TextAlignment="Center"><Run Language="ru-ru" Text="Привязки фразы"/></TextBlock>
+        <Button x:Name="Save_Binds" Style="{DynamicResource RoundedButtonStyle}" Content="Сохранить" HorizontalAlignment="Left" Margin="198,431,0,0" VerticalAlignment="Top" Width="104" Height="38" Click="Save_Binds_Click"/>
+        <Button x:Name="Clear_Binds" Style="{DynamicResource RoundedButtonStyle}" Content="Очистить" HorizontalAlignment="Left" Margin="356,431,0,0" VerticalAlignment="Top" Width="80" Height="38" Click="Clear_Binds_Click"/>
+        <Button x:Name="Up_Button" Content="" HorizontalAlignment="Left" Margin="481,368,0,0" VerticalAlignment="Top" Width="27" Height="26" Click="Up_Button_Click">
+            <Button.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="/Images/Up_Arrow.png"/>
+            </Button.Background>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+                        <ContentPresenter Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" Margin="{TemplateBinding Padding}" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsFocused" Value="True">
+
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="Down_Button" Content="" HorizontalAlignment="Left" Margin="481,394,0,0" VerticalAlignment="Top" Width="27" Height="26" Click="Down_Button_Click">
+            <Button.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="/Images/Down_Arrow.png"/>
+            </Button.Background>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+                        <ContentPresenter Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" Margin="{TemplateBinding Padding}" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsFocused" Value="True">
+
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <TextBlock x:Name="Binds_Better" HorizontalAlignment="Left" Margin="534,326,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="336" Width="315" FontSize="18"/>
+
     </Grid>
 </Page>

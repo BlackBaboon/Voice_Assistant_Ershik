@@ -32,19 +32,8 @@ namespace Ershik
         private void Load_Phrases()
         {
             Phrases.Clear();
-            SqlCommand cmd = new SqlCommand($"select * from Phrase where Profile_name = '{App.Current_profile_name}'"
-                , App.Connection);
 
-            App.Connection.Open();
-
-            SqlDataReader rdr = cmd.ExecuteReader();
-            while (rdr.Read())
-            {
-                Phrases.Add(new string[2] {
-                    rdr.GetString(1),
-                    rdr.GetString(2)
-                });
-            }
+            Phrases = Database_interaction.Get.Get_Phrases();
             App.Connection.Close();
             Page = 0;
         }
@@ -60,11 +49,13 @@ namespace Ershik
                 Delete_Button.Visibility = Visibility.Hidden;
                 Phrase.Visibility = Visibility.Hidden;
                 Description.Visibility = Visibility.Hidden;
+                Test_Phrase_Button.Visibility = Visibility.Hidden;
 
                 Edit_Button1.Visibility = Visibility.Hidden;
                 Delete_Button1.Visibility = Visibility.Hidden;
                 Phrase1.Visibility = Visibility.Hidden;
                 Description1.Visibility = Visibility.Hidden;
+                Test_Phrase_Button1.Visibility = Visibility.Hidden;
 
                 return;
             }
@@ -77,6 +68,7 @@ namespace Ershik
                 Delete_Button.Visibility = Visibility.Visible;
                 Phrase.Visibility = Visibility.Visible;
                 Description.Visibility = Visibility.Visible;
+                Test_Phrase_Button.Visibility = Visibility.Visible;
             }
 
             Phrase.Text = Phrases[Page * 2][0];
@@ -88,6 +80,7 @@ namespace Ershik
                 Delete_Button1.Visibility = Visibility.Hidden;
                 Phrase1.Visibility = Visibility.Hidden;
                 Description1.Visibility = Visibility.Hidden;
+                Test_Phrase_Button1.Visibility = Visibility.Hidden;
 
                 Phrase1.Text = "";
                 Description1.Text = "";
@@ -98,7 +91,8 @@ namespace Ershik
                 Delete_Button1.Visibility = Visibility.Visible;
                 Phrase1.Visibility = Visibility.Visible;
                 Description1.Visibility = Visibility.Visible;
-                
+                Test_Phrase_Button1.Visibility = Visibility.Visible;
+
                 Phrase1.Text = Phrases[Page * 2 + 1][0];
                 Description1.Text = Phrases[Page * 2 + 1][1];                
             }
@@ -171,6 +165,18 @@ namespace Ershik
                 MessageBox.Show("Фраза успешно добавлена");
                 Load_Phrases();
                 Load_Page();
+            }
+        }
+
+        private void Test_Phrase_Button1_Click(object sender, RoutedEventArgs e)
+        {
+            if(((Button)sender).Name == "Test_Phrase_Button")
+            {
+                Database_interaction.Execute.Execute_Phrase(Phrase.Text,true);
+            }
+            else
+            {
+                Database_interaction.Execute.Execute_Phrase(Phrase1.Text, true);
             }
         }
     }

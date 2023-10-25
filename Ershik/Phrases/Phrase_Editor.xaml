@@ -23,5 +23,8 @@
         <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="Forward_Button" Content="Вперёд" HorizontalAlignment="Left" Margin="641,76,0,0" VerticalAlignment="Top" Height="24" Width="37" Click="Forward_Button_Click"/>
         <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="Back_Button" Content="Назад" HorizontalAlignment="Left" Margin="566,76,0,0" VerticalAlignment="Top" Height="23" Width="37" Click="Back_Button_Click"/>
         <Button x:Name="Insert_Phrase_btn" Style="{DynamicResource RoundedButtonStyle}" Content="Добавить фразу" HorizontalAlignment="Left" Margin="549,593,0,0" VerticalAlignment="Top" Height="32" Width="158" Click="Insert_Phrase_btn_Click"/>
+        <Button Style="{DynamicResource RoundedButtonStyle}" Margin="243,249,0,0" x:Name="Test_Phrase_Button" Content="Тестировать фразу" Width="188" HorizontalAlignment="Left" Height="29" Click="Test_Phrase_Button1_Click" VerticalAlignment="Top"/>
+        <Button Style="{DynamicResource RoundedButtonStyle}" Margin="243,432,0,0" x:Name="Test_Phrase_Button1" Content="Тестировать фразу" Width="188" HorizontalAlignment="Left" Height="29" Click="Test_Phrase_Button1_Click" VerticalAlignment="Top"/>
+
     </Grid>
 </Page>

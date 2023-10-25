@@ -35,19 +35,8 @@ namespace Ershik
         private void Load_Scripts()
         {
             Scripts.Clear();
-            SqlCommand cmd = new SqlCommand($"select * from Script where Profile_name = '{App.Current_profile_name}'"
-                , App.Connection);
 
-            App.Connection.Open();
-
-            SqlDataReader rdr = cmd.ExecuteReader();
-            while (rdr.Read())
-            {
-                Scripts.Add(new string[2] {
-                    rdr.GetString(1),
-                    rdr.GetString(2)
-                });
-            }
+            Scripts = Database_interaction.Get.Get_Scripts();
             App.Connection.Close();
             Page = 0;
         }
@@ -201,93 +190,13 @@ namespace Ershik
 
         private void Test_Click(object sender, RoutedEventArgs e)
         {
-            List<string> Commands;
-            List<string> Credentials;
             if (((Button)sender).Name == "Test_Button")
             {
-                Commands = Database_interaction.Get.Get_Command(Script.Text);
-                Credentials = Database_interaction.Get.Get_Credentials();
+                Database_interaction.Execute.Execute_Script(Script.Text,true);
             }
             else
             {
-                Commands = Database_interaction.Get.Get_Command(Script1.Text);
-                Credentials = Database_interaction.Get.Get_Credentials();
-            }
-            string output_errors = "";
-            if (Credentials[0] == "")
-            {
-
-                foreach (var cmd_command in Commands)
-                {
-                    using (Process P = new Process())
-                    {
-                        P.StartInfo.FileName = "cmd.exe";
-                        P.StartInfo.RedirectStandardInput = true;
-                        P.StartInfo.RedirectStandardOutput = true;
-                        P.StartInfo.CreateNoWindow = true;
-                        P.StartInfo.UseShellExecute = false;
-                        P.StartInfo.RedirectStandardOutput = true;
-                        P.StartInfo.RedirectStandardError = true;
-                        P.StartInfo.StandardOutputEncoding = Encoding.GetEncoding(866);
-                        P.StartInfo.StandardErrorEncoding = Encoding.GetEncoding(866);
-
-                        P.Start();
-
-                        P.StandardInput.WriteLine(cmd_command);
-                        P.StandardInput.Flush();
-                        P.StandardInput.Close();
-                        while (!P.StandardError.EndOfStream)
-                        {
-                            output_errors += cmd_command + " " + P.StandardError.ReadLine() + "\n";
-                        }
-                        P.WaitForExit();
-                    }
-                }
-            }
-            else
-            {
-                foreach (var cmd_command in Commands)
-                {
-                    SecureString password = new SecureString();
-                    foreach (char ch in Credentials[1]) password.AppendChar(ch);
-                    using (Process P = new Process())
-                    {
-                        P.StartInfo.UserName = Credentials[0];
-                        P.StartInfo.Password = password;
-                        P.StartInfo.FileName = "cmd.exe";
-                        P.StartInfo.RedirectStandardInput = true;
-                        P.StartInfo.RedirectStandardOutput = true;
-                        P.StartInfo.CreateNoWindow = true;
-                        P.StartInfo.UseShellExecute = false; 
-                        P.StartInfo.RedirectStandardOutput = true;
-                        P.StartInfo.RedirectStandardError = true;
-                        P.StartInfo.StandardOutputEncoding = Encoding.GetEncoding(866);
-                        P.StartInfo.StandardErrorEncoding = Encoding.GetEncoding(866);
-                        P.Start();
-
-                        P.StandardInput.WriteLine(cmd_command);
-                        P.StandardInput.Flush();
-                        P.StandardInput.Close();
-                        while (!P.StandardError.EndOfStream)
-                        {
-                            output_errors += cmd_command + " " + P.StandardError.ReadLine() + "\n";
-                        }
-                        P.WaitForExit();
-                    }
-                }
-            }
-
-            if (output_errors == "")
-                MessageBox.Show("Скрипт выполнен");
-            else
-            {
-                MessageBoxResult result = MessageBox.Show("При выполнении скрипта были обнаружены ошибки, желаете их посмотреть?", "Найдены ошибки",
-                    MessageBoxButton.YesNo, MessageBoxImage.Question);
-
-                if (result == MessageBoxResult.Yes)
-                {
-                    MessageBox.Show(output_errors);
-                }
+                Database_interaction.Execute.Execute_Script(Script1.Text, true);
             }
 
         }

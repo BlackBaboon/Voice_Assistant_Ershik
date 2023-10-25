@@ -94,3 +94,7 @@ D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\Scripts\Command_
 D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\Scripts\Command_Editor.baml
 D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\Bindings.g.cs
 D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\Bindings.baml
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\Profiles\Choose_Profile.g.cs
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\Profiles\Choose_Profile.baml
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\Profiles\Insert_Profile.g.cs
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\Profiles\Insert_Profile.baml

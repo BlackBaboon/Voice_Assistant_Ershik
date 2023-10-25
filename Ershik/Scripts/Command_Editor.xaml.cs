@@ -80,7 +80,6 @@ namespace Ershik
             if (Commands.SelectedIndex == 0)
                 return;
             string temp = Commands_List[Commands.SelectedIndex];
-
             Commands_List[Commands.SelectedIndex] = Commands_List[Commands.SelectedIndex-1];
             Commands_List[Commands.SelectedIndex-1] = temp;
 
