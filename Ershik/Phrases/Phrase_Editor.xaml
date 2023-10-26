@@ -8,7 +8,6 @@
       d:DesignHeight="704" d:DesignWidth="920"
       Title="Phrase_Editor">
     <Grid>
-
         <Button Style="{DynamicResource RoundedButtonStyle}" Margin="490,215,0,0" x:Name="Delete_Button" Content="Удалить" Width="188" HorizontalAlignment="Left" Height="29" Click="Delete_Button_Click" VerticalAlignment="Top"/>
         <TextBlock x:Name="Phrase" HorizontalAlignment="Center" TextWrapping="Wrap" Width="520" Height="47" FontSize="30" TextAlignment="Right" Background="{x:Null}" VerticalAlignment="Top" Margin="0,119,0,0"/>
         <Button Style="{DynamicResource RoundedButtonStyle}" Margin="244,215,0,0" x:Name="Edit_Button" Content="Редактировать" Width="188" HorizontalAlignment="Left" Height="29" Click="Edit_Button_Click" VerticalAlignment="Top"/>
@@ -20,8 +19,16 @@
         <Button Style="{DynamicResource RoundedButtonStyle}" Margin="244,398,0,0" x:Name="Edit_Button1" Content="Редактировать" Width="187" HorizontalAlignment="Left" Height="29" Click="Edit_Button1_Click" VerticalAlignment="Top"/>
         <TextBlock TextAlignment="Right" x:Name="Description1" HorizontalAlignment="Center" TextWrapping="Wrap" Width="521" Height="23" FontSize="14" Background="{x:Null}" Margin="0,352,0,0" VerticalAlignment="Top"/>
 
-        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="Forward_Button" Content="Вперёд" HorizontalAlignment="Left" Margin="641,76,0,0" VerticalAlignment="Top" Height="24" Width="37" Click="Forward_Button_Click"/>
-        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="Back_Button" Content="Назад" HorizontalAlignment="Left" Margin="566,76,0,0" VerticalAlignment="Top" Height="23" Width="37" Click="Back_Button_Click"/>
+        <Button x:Name="Forward_Button" Content="" HorizontalAlignment="Left" Margin="670,76,0,0" VerticalAlignment="Top" Height="24" Width="37" Click="Forward_Button_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Right_Arrow.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Back_Button" Content="" HorizontalAlignment="Left" Margin="633,76,0,0" VerticalAlignment="Top" Height="24" Width="37" Click="Back_Button_Click">
+            <Button.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="/Images/Left_Arrow.png"/>
+            </Button.Background>
+        </Button>
         <Button x:Name="Insert_Phrase_btn" Style="{DynamicResource RoundedButtonStyle}" Content="Добавить фразу" HorizontalAlignment="Left" Margin="549,593,0,0" VerticalAlignment="Top" Height="32" Width="158" Click="Insert_Phrase_btn_Click"/>
         <Button Style="{DynamicResource RoundedButtonStyle}" Margin="243,249,0,0" x:Name="Test_Phrase_Button" Content="Тестировать фразу" Width="188" HorizontalAlignment="Left" Height="29" Click="Test_Phrase_Button1_Click" VerticalAlignment="Top"/>
         <Button Style="{DynamicResource RoundedButtonStyle}" Margin="243,432,0,0" x:Name="Test_Phrase_Button1" Content="Тестировать фразу" Width="188" HorizontalAlignment="Left" Height="29" Click="Test_Phrase_Button1_Click" VerticalAlignment="Top"/>

@@ -92,7 +92,6 @@ namespace Ershik
         }
         private async Task VoiceToText()
         {
-            
             WebRequest request = WebRequest.Create("");
             request.Method = "POST";
             byte[] byteArray = File.ReadAllBytes(outputFilename);
@@ -119,6 +118,7 @@ namespace Ershik
                     if (voice_to_text.ToLower().Contains(r.ToLower()))
                     {
                         Database_interaction.Execute.Execute_Phrase(r,false);
+                        break;
                     }
 
                 }

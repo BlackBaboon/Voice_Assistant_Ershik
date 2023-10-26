@@ -37,7 +37,7 @@ namespace Ershik
             Scripts.Clear();
 
             Scripts = Database_interaction.Get.Get_Scripts();
-            App.Connection.Close();
+
             Page = 0;
         }
 
