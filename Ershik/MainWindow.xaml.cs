@@ -28,6 +28,9 @@ using System.Threading;
 using System.Diagnostics;
 using System.Security;
 using NAudio.CoreAudioApi;
+using IronPython;
+using IronPython.Hosting;
+using Microsoft.Scripting.Hosting;
 
 namespace Ershik
 {
@@ -39,7 +42,6 @@ namespace Ershik
         string voice_to_text = "";
         bool on_write = false;
         int counter = 0;
-        List<string> All_Phrases = Database_interaction.Get.Get_Phrases().Select(x => x[0].ToLower()).ToList();
         WaveIn waveIn;
         WaveFileWriter writer;
         string outputFilename = "demo0.wav";
@@ -53,15 +55,17 @@ namespace Ershik
             InitializeComponent();
             App.MainFrame = TitleFrame;
             Phrase_btn_Click(null, null);
-            //Speech_Recognize();
+            Speech_Recognize();
+            App.All_Phrases = Database_interaction.Get.Get_Phrases().Select(x => x[0].ToLower()).ToList();
         }
 
         private async void Speech_Recognize()
         {
+            
             int file_index = 0;
             while (true)
             {
-                await Task.Delay(100);
+                await Task.Delay(10);
                 waveIn = new WaveIn();
                 waveIn.DeviceNumber = App.Current_audio_device;
                 waveIn.DataAvailable += waveIn_DataAvailable;
@@ -71,8 +75,8 @@ namespace Ershik
                 waveIn.StartRecording();
                 await Task.Delay(5000);
                 waveIn.StopRecording();
-                await Task.Delay(100);
-                await VoiceToText();
+                await Task.Delay(10);
+                await VoiceToText(file_index);
                 file_index += 1;
                 file_index = file_index % 3;
                 outputFilename = $"demo{file_index}.wav";
@@ -90,37 +94,59 @@ namespace Ershik
             writer.Close();
             writer = null;
         }
-        private async Task VoiceToText()
+        private async Task VoiceToText(int file_index)
         {
-            WebRequest request = WebRequest.Create("");
-            request.Method = "POST";
-            byte[] byteArray = File.ReadAllBytes(outputFilename);
-            request.ContentType = "audio/l16; rate=16000";
-            request.ContentLength = byteArray.Length;
-            request.GetRequestStream().Write(byteArray, 0, byteArray.Length);
+            string interpreter = $@"{Directory.GetCurrentDirectory()}\SpeechToText\venv\Scripts\python.exe";
+            string script_path = $@"{Directory.GetCurrentDirectory()}\SpeechToText\main.py";
+            string recorded = "";
+            using (Process P = new Process())
+            {
+                P.StartInfo.FileName = "cmd.exe";
+                P.StartInfo.RedirectStandardInput = true;
+                P.StartInfo.RedirectStandardOutput = true;
+                P.StartInfo.CreateNoWindow = true;
+                P.StartInfo.UseShellExecute = false;
+                P.StartInfo.RedirectStandardOutput = true;
+                P.StartInfo.RedirectStandardError = true;
+                P.StartInfo.RedirectStandardInput = true;
+                P.Start();
+                using (var sw = new StreamWriter(P.StandardInput.BaseStream, Encoding.GetEncoding(866)))
+                {
+                    string command = $"\"{interpreter}\" \"{script_path}\" {file_index}";
+                    sw.WriteLine(command);
+                    sw.Flush();
+                    sw.Close();
+                }
 
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            StreamReader reader = new StreamReader(response.GetResponseStream());
-
-            string strtrs = reader.ReadToEnd();
-            var rg = new Regex(@"transcript" + '"' + ":" + '"' + "([A-Z, А-Я, a-z,а-я, ,0-9]*)");
-
+                while (!P.StandardOutput.EndOfStream)
+                {
+                    if (P.StandardOutput.ReadLine() == file_index.ToString())
+                    {
+                        recorded = P.StandardOutput.ReadLine().Trim().ToLower()+"\n";
+                        break;
+                    }
+                }
+                ceck1.Text = recorded;
+                P.WaitForExit();
+            }
+            
             if (!on_write)
             {
-                voice_to_text = rg.Match(strtrs).Groups[1].Value+" ";
+                voice_to_text = recorded;
             }
             else
             {
-                voice_to_text += rg.Match(strtrs).Groups[1].Value+" ";
+                voice_to_text += recorded;
                 counter++;
-                foreach(var r in All_Phrases)
+                foreach(var r in App.All_Phrases)
                 {
                     if (voice_to_text.ToLower().Contains(r.ToLower()))
                     {
                         Database_interaction.Execute.Execute_Phrase(r,false);
+                        voice_to_text = "";
+                        counter = 3;
                         break;
                     }
-
                 }
                 if(counter == 3)
                 {
@@ -133,9 +159,7 @@ namespace Ershik
                 counter = 0;
                 on_write = true;
             }
-
-            reader.Close();
-            response.Close();
+            
         }
 
         private void Phrase_btn_Click(object sender, RoutedEventArgs e)

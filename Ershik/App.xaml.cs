@@ -17,7 +17,9 @@ namespace Ershik
     public partial class App : Application
     {
         public static SqlConnection Connection = new SqlConnection("server=DAUN;database=VoiceAssistant_Ershik;trusted_connection=true");
-        
+
+        public static List<string> All_Phrases;
+
         public static Frame MainFrame;
 
         public static int Current_audio_device;

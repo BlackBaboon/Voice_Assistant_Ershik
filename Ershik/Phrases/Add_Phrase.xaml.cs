@@ -30,6 +30,7 @@ namespace Ershik
             {
                 Database_interaction.Add.Insert_Phrase(Phrase.Text, Desc.Text);
                 this.DialogResult = true;
+                App.All_Phrases = Database_interaction.Get.Get_Phrases().Select(x => x[0].ToLower()).ToList();
             }
             catch
             {
