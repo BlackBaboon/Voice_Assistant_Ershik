@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ershik"
         mc:Ignorable="d"
+        Background="#FF2B0061"
         Title="Выберите профиль" Height="300" Width="400">
     <Grid>
-        <ComboBox x:Name="Profiles" HorizontalAlignment="Left" VerticalAlignment="Top" Width="285" Height="44" Margin="49,33,0,0"/>
+        <ComboBox x:Name="Profiles" HorizontalAlignment="Left" VerticalAlignment="Top" Width="285" Height="44" Margin="49,33,0,0" Foreground="White" BorderBrush="#FF4900A5"/>
         <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="Next" Content="Далее" HorizontalAlignment="Left" Margin="250,94,0,0" VerticalAlignment="Top" Click="Next_Click" Width="53" FontSize="20" Height="34"/>
         <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="Cancel" Content="Отмена" HorizontalAlignment="Left" Margin="49,94,0,0" VerticalAlignment="Top" Click="Cancel_Click" Width="63" FontSize="20" Height="34"/>
         <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="Insert_Profile" Content="Добавить..." HorizontalAlignment="Left" Margin="104,142,0,0" VerticalAlignment="Top" Width="159" FontSize="20" Height="34" Click="Insert_Profile_Click"/>

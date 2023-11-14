@@ -25,6 +25,16 @@ namespace Ershik
         }
         private void Add_Script_Click(object sender, RoutedEventArgs e)
         {
+            if(Script.Text.Length > 24 || Script.Text.Trim().Length < 4)
+            {
+                MessageBox.Show("Длина названия скрипта не может превышать 24 символов и быть короче 4");
+                return;
+            }
+            if (Desc.Text.Length > 200)
+            {
+                MessageBox.Show("Длина описания скрипта не может превышать 200");
+                return;
+            }
             try
             {
                 Database_interaction.Add.Insert_Script(Script.Text, Desc.Text);

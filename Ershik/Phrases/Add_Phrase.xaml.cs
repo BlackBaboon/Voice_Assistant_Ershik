@@ -26,6 +26,26 @@ namespace Ershik
 
         private void Add_Phrase_Click(object sender, RoutedEventArgs e)
         {
+            if (!Phrase.Text.All(x=> Char.IsLetter(x) || Char.IsWhiteSpace(x)))
+            {
+                MessageBox.Show("Фраза дожна состоять только из букв, цифр или пробелов");
+                return;
+            } 
+            if(Phrase.Text.Trim() == "")
+            {
+                MessageBox.Show("Фраза не может быть пустой");
+                return;
+            }
+            if (Phrase.Text.Length > 24 || Phrase.Text.Length < 1)
+            {
+                MessageBox.Show("Длина фразы не может превышать 24 символов и быть короче 1");
+                return;
+            }
+            if (Desc.Text.Length > 200)
+            {
+                MessageBox.Show("Длина описания не может превышать 200 символов");
+                return;
+            }
             try
             {
                 Database_interaction.Add.Insert_Phrase(Phrase.Text, Desc.Text);

@@ -33,6 +33,11 @@ namespace Ershik
         }
         private void Add_Command_Click(object sender, RoutedEventArgs e)
         {
+            if(Current_Command.Text.Length > 500)
+            {
+                MessageBox.Show("Длина команды не может превышать 500 строчек");
+                return;
+            }    
             Commands_List.Insert(Commands_List.Count-1, Current_Command.Text);
             Refill();
             Commands.SelectedIndex = Commands_List.Count-1;

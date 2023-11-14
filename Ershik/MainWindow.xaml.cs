@@ -28,10 +28,6 @@ using System.Threading;
 using System.Diagnostics;
 using System.Security;
 using NAudio.CoreAudioApi;
-using IronPython;
-using IronPython.Hosting;
-using Microsoft.Scripting.Hosting;
-
 namespace Ershik
 {
     /// <summary>
@@ -96,8 +92,6 @@ namespace Ershik
         }
         private async Task VoiceToText(int file_index)
         {
-            string interpreter = $@"{Directory.GetCurrentDirectory()}\SpeechToText\venv\Scripts\python.exe";
-            string script_path = $@"{Directory.GetCurrentDirectory()}\SpeechToText\main.py";
             string recorded = "";
             using (Process P = new Process())
             {
@@ -112,7 +106,7 @@ namespace Ershik
                 P.Start();
                 using (var sw = new StreamWriter(P.StandardInput.BaseStream, Encoding.GetEncoding(866)))
                 {
-                    string command = $"\"{interpreter}\" \"{script_path}\" {file_index}";
+                    string command = $"main.exe {file_index}";
                     sw.WriteLine(command);
                     sw.Flush();
                     sw.Close();

@@ -5,14 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ershik"
         mc:Ignorable="d"
+        Background="#FF2B0061"
         Title="Add_Script" Height="250" Width="400">
     <Grid>
-        <Button x:Name="Add" Style="{DynamicResource RoundedButtonStyle}" Content="Сохранить" HorizontalAlignment="Left" Margin="34,182,0,0" VerticalAlignment="Top" Click="Add_Script_Click" Height="24" Width="76"/>
-        <Button x:Name="Cancel" Style="{DynamicResource RoundedButtonStyle}" Content="Отмена" HorizontalAlignment="Left" Margin="269,181,0,0" VerticalAlignment="Top" Width="40" Click="Cancel_Click" Height="25"/>
-        <TextBox x:Name="Script" HorizontalAlignment="Left" Margin="34,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="291" Height="36" FontSize="25"/>
-        <TextBox x:Name="Desc" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="291" Height="37" Margin="34,135,0,0"/>
-        <Label Content="Название скрипта" HorizontalAlignment="Left" Margin="34,37,0,0" VerticalAlignment="Top"/>
-        <Label Content="Описание" HorizontalAlignment="Left" Margin="34,109,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="Add" Style="{DynamicResource RoundedButtonStyle}" Content="Сохранить" HorizontalAlignment="Left" Margin="34,170,0,0" VerticalAlignment="Top" Click="Add_Script_Click" Height="35" Width="76"/>
+        <Button x:Name="Cancel" Style="{DynamicResource RoundedButtonStyle}" Content="Отмена" HorizontalAlignment="Left" Margin="269,169,0,0" VerticalAlignment="Top" Width="40" Click="Cancel_Click" Height="36"/>
+        <TextBox x:Name="Script" HorizontalAlignment="Left" Margin="34,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="291" Height="36" FontSize="25"/>
+        <TextBox x:Name="Desc" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="291" Height="37" Margin="34,123,0,0"/>
+        <Label Content="Название скрипта" HorizontalAlignment="Left" Margin="34,25,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label Content="Описание" HorizontalAlignment="Left" Margin="34,96,0,0" VerticalAlignment="Top" Foreground="White"/>
 
     </Grid>
 </Window>

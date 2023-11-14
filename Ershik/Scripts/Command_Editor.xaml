@@ -6,10 +6,10 @@
         xmlns:local="clr-namespace:Ershik"
         mc:Ignorable="d"
         Title="Cal_Editor" Height="720" Width="1280">
-    <Grid>
+    <Grid Background="#FF2B0061">
         <Button  Style="{DynamicResource RoundedButtonStyle}" x:Name="Add_Command" Content="Сохранить команду" HorizontalAlignment="Left" Margin="10,361,0,0" VerticalAlignment="Top" Height="47" Width="274" Click="Add_Command_Click" FontSize="20"/>
-        <TextBox x:Name="Current_Command" AcceptsReturn="True" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="708" Height="342" FontSize="20"/>
-        <ComboBox x:Name="Commands" HorizontalAlignment="Left" Margin="736,12,0,0" VerticalAlignment="Top" Width="466" Height="71" SelectionChanged="Commands_List_SelectionChanged"/>
+        <TextBox x:Name="Current_Command" AcceptsReturn="True" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="708" Height="342" FontSize="20" Background="#FF212121" Foreground="White"/>
+        <ComboBox x:Name="Commands" HorizontalAlignment="Left" Margin="736,12,0,0" VerticalAlignment="Top" Width="466" Height="71" SelectionChanged="Commands_List_SelectionChanged" Background="Black"/>
         <Button  Style="{DynamicResource RoundedButtonStyle}" x:Name="Delete_Command" Content="Удалить команду" HorizontalAlignment="Left" Margin="416,361,0,0" VerticalAlignment="Top" Height="47" Width="274" FontSize="20" Click="Delete_Command_Click"/>
         <Button x:Name="Up" Content="" HorizontalAlignment="Left" Margin="1207,12,0,0" VerticalAlignment="Top" Height="33" Width="42" Click="Up_Click">
             <Button.Background>

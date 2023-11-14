@@ -25,6 +25,28 @@ namespace Ershik
         }
         private void Insert_Click(object sender, RoutedEventArgs e)
         {
+            if ( !(Password.Password.All(x=>Char.IsLetterOrDigit(x) || Char.IsWhiteSpace(x) || x == '_' || x == '-') 
+                &
+                Profile_name.Text.All(x => Char.IsLetterOrDigit(x) || Char.IsWhiteSpace(x) || x == '_' || x == '-')
+                &
+                Login.Text.All(x => Char.IsLetterOrDigit(x) || Char.IsWhiteSpace(x) || x == '_' || x == '-')) )
+            {
+                MessageBox.Show("Текстовые поля могут содержать только буквы и цифры, а также символы '-, _'");
+                return;
+            }
+
+            if(Profile_name.Text.Length > 16 || Profile_name.Text.Length < 4)
+            {
+                MessageBox.Show("Длина профиля не может превышать 16 символов и быть короче 4");
+                return;
+            }
+
+            if (Login.Text.Length > 24)
+            {
+                MessageBox.Show("Длина логина для выхода не может превышать 24 символов");
+                return;
+            }
+
             if (Password.Password == Password_1.Password)
                 if (Login.Text != "")
                 {
@@ -32,7 +54,7 @@ namespace Ershik
                 }
                 else
                 {
-                    Database_interaction.Add.Insert_Profile(Profile_name.Text, "","");
+                    Database_interaction.Add.Insert_Profile(Profile_name.Text, "", "");
                 }
             else
                 MessageBox.Show("Пароли не совпадают");
