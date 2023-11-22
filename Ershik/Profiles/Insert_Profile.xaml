@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Ershik"
         mc:Ignorable="d"
         Background="#FF2B0061"
-        Title="Insert_Profile" Height="300" Width="400">
+        Title="Создание профиля" Height="300" Width="400">
     <Grid>
         <Button x:Name="Insert" Style="{DynamicResource RoundedButtonStyle}" Content="Добавить" HorizontalAlignment="Left" Margin="242,186,0,0" VerticalAlignment="Top" Height="35" Width="72" Click="Insert_Click"/>
         <Button x:Name="Cancel" Style="{DynamicResource RoundedButtonStyle}" Content="Отмена" HorizontalAlignment="Left" Margin="244,226,0,0" VerticalAlignment="Top" Height="35" Width="68" Click="Cancel_Click"/>

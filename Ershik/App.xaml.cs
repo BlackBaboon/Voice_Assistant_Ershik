@@ -23,6 +23,7 @@ namespace Ershik
         public static Frame MainFrame;
 
         public static int Current_audio_device;
+
         public static string Current_profile_name = "Test_profile";
     }
 }

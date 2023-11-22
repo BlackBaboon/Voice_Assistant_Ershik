@@ -27,7 +27,7 @@ namespace Ershik
         public void Load_Profiles()
         {
             Profiles.ItemsSource = Database_interaction.Get.Get_Profiles()
-                .Select(p => new TextBlock() { Text = p, FontSize = 20 });
+                .Select(p => new TextBlock() { Text = p, FontSize = 20});
             Profiles.SelectedIndex = 0;
         }
 

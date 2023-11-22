@@ -1,13 +1,6 @@
 D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Release\Ershik.exe.config
 D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Release\Ershik.exe
 D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Release\Ershik.pdb
-D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Release\IronPython.dll
-D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Release\IronPython.Modules.dll
-D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Release\IronPython.SQLite.dll
-D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Release\IronPython.Wpf.dll
-D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Release\Microsoft.Dynamic.dll
-D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Release\Microsoft.Scripting.dll
-D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Release\Microsoft.Scripting.Metadata.dll
 D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Release\Microsoft.Win32.Registry.dll
 D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Release\NAudio.Asio.dll
 D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Release\NAudio.Core.dll
@@ -22,13 +15,6 @@ D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Release\System.Numeric
 D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
 D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Release\System.Security.AccessControl.dll
 D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Release\System.Security.Principal.Windows.dll
-D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Release\IronPython.xml
-D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Release\IronPython.Modules.xml
-D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Release\IronPython.SQLite.xml
-D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Release\IronPython.Wpf.xml
-D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Release\Microsoft.Dynamic.xml
-D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Release\Microsoft.Scripting.xml
-D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Release\Microsoft.Scripting.Metadata.xml
 D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Release\Microsoft.Win32.Registry.xml
 D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Release\NAudio.xml
 D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Release\NAudio.Asio.xml

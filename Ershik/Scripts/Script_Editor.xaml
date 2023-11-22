@@ -10,15 +10,15 @@
     <Grid>
 
         <Button Style="{DynamicResource RoundedButtonStyle}" Margin="490,215,0,0" x:Name="Delete_Button" Content="Удалить" Width="188" HorizontalAlignment="Left" Height="29" Click="Delete_Button_Click" VerticalAlignment="Top"/>
-        <TextBlock x:Name="Script" HorizontalAlignment="Center" TextWrapping="Wrap" Width="520" Height="47" FontSize="30" TextAlignment="Right" Background="{x:Null}" VerticalAlignment="Top" Margin="0,119,0,0"/>
+        <TextBlock x:Name="Script" HorizontalAlignment="Center" TextWrapping="Wrap" Width="520" Height="47" FontSize="30" TextAlignment="Right" Background="{x:Null}" VerticalAlignment="Top" Margin="0,119,0,0" Foreground="#FFFDFDFD"/>
         <Button Style="{DynamicResource RoundedButtonStyle}" Margin="244,215,0,0" x:Name="Edit_Button" Content="Редактировать" Width="188" HorizontalAlignment="Left" Height="29" Click="Edit_Button_Click" VerticalAlignment="Top"/>
-        <TextBlock x:Name="Description" HorizontalAlignment="Center" TextWrapping="Wrap" Width="521" Height="23" FontSize="14"  TextAlignment="Right" Background="{x:Null}" Margin="0,171,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="Description" HorizontalAlignment="Center" TextWrapping="Wrap" Width="521" Height="23" FontSize="14"  TextAlignment="Right" Background="{x:Null}" Margin="0,171,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD"/>
 
 
         <Button Style="{DynamicResource RoundedButtonStyle}" Margin="490,398,0,0" x:Name="Delete_Button1" Content="Удалить" Width="188" HorizontalAlignment="Left" Height="29" Click="Delete_Button1_Click" VerticalAlignment="Top"/>
-        <TextBlock TextAlignment="Right" x:Name="Script1" HorizontalAlignment="Center" TextWrapping="Wrap" Width="520" Height="47" FontSize="30" Background="{x:Null}" VerticalAlignment="Top" Margin="0,300,0,0"/>
+        <TextBlock TextAlignment="Right" x:Name="Script1" HorizontalAlignment="Center" TextWrapping="Wrap" Width="520" Height="47" FontSize="30" Background="{x:Null}" VerticalAlignment="Top" Margin="0,300,0,0" Foreground="#FFFDFDFD"/>
         <Button Style="{DynamicResource RoundedButtonStyle}" Margin="244,398,0,0" x:Name="Edit_Button1" Content="Редактировать" Width="187" HorizontalAlignment="Left" Height="29" Click="Edit_Button1_Click" VerticalAlignment="Top"/>
-        <TextBlock TextAlignment="Right" x:Name="Description1" HorizontalAlignment="Center" TextWrapping="Wrap" Width="521" Height="23" FontSize="14" Background="{x:Null}" Margin="0,352,0,0" VerticalAlignment="Top"/>
+        <TextBlock TextAlignment="Right" x:Name="Description1" HorizontalAlignment="Center" TextWrapping="Wrap" Width="521" Height="23" FontSize="14" Background="{x:Null}" Margin="0,352,0,0" VerticalAlignment="Top" Foreground="#FFFDFDFD"/>
 
         <Button x:Name="Forward_Button" Content="" HorizontalAlignment="Left" Margin="671,81,0,0" VerticalAlignment="Top" Height="24" Width="36" Click="Forward_Button_Click">
             <Button.Background>
