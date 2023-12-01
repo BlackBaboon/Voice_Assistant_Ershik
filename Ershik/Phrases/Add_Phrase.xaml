@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Ershik"
         mc:Ignorable="d"
         Background="#FF2B0061"
-        Title="Add_Phrase" Height="250" Width="400">
+        Title="Добавление фразы" Height="250" Width="400">
     <Grid>
         <Button x:Name="Add" Style="{DynamicResource RoundedButtonStyle}" Content="Сохранить" HorizontalAlignment="Left" Margin="34,170,0,0" VerticalAlignment="Top" Click="Add_Phrase_Click" Height="32" Width="77"/>
         <Button x:Name="Cancel" Style="{DynamicResource RoundedButtonStyle}" Content="Отмена" HorizontalAlignment="Left" Margin="273,169,0,0" VerticalAlignment="Top" Width="41" Click="Cancel_Click" Height="33"/>

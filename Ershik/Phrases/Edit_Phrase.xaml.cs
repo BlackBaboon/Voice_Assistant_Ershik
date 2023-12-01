@@ -58,6 +58,7 @@ namespace Ershik
             }
             catch
             {
+                MessageBox.Show("Ошибка изменения фразы");
                 this.DialogResult= false;
                 this.Close();
             }

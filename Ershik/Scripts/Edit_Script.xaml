@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Ershik"
         mc:Ignorable="d"
         Background="#FF2B0061"
-        Title="Edit_Script" Height="250" Width="400">
+        Title="Изменение скрипта" Height="250" Width="400">
     <Grid>
         <Button x:Name="Add" Style="{DynamicResource RoundedButtonStyle}" Content="Сохранить" HorizontalAlignment="Left" Margin="34,171,0,0" VerticalAlignment="Top" Click="Add_Script_Click" Height="34" Width="76" Foreground="White"/>
         <Button x:Name="Cancel" Style="{DynamicResource RoundedButtonStyle}" Content="Отмена" HorizontalAlignment="Left" Margin="269,170,0,0" VerticalAlignment="Top" Width="40" Click="Cancel_Click" Height="35" Foreground="White"/>

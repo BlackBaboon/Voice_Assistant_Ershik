@@ -54,6 +54,7 @@ namespace Ershik
             }
             catch
             {
+                MessageBox.Show("Ошибка добавления фразы");
                 this.DialogResult = false;
                 this.Close();
             }

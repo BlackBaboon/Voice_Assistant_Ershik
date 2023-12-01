@@ -16,7 +16,7 @@
         <Button x:Name="ChangeProfile_btn" BorderThickness="2"  Style="{DynamicResource RoundedButtonStyle}"  Content="Сменить профиль" HorizontalAlignment="Left" Margin="59,537,0,0" VerticalAlignment="Top" Height="42" Width="230" FontSize="20" Click="ChangeProfile_btn_Click" Background="#FF8048FF" BorderBrush="Black" Foreground="White"/>
         <Button x:Name="Settings_btn" BorderThickness="2"  Style="{DynamicResource RoundedButtonStyle}"  Content="Настройки" HorizontalAlignment="Left" Margin="59,605,0,0" VerticalAlignment="Top" Height="42" Width="230" FontSize="20" Click="Settings_btn_Click" Background="#FF8048FF" BorderBrush="Black"/>
         <Rectangle HorizontalAlignment="Left" Height="704" Margin="381,0,0,0" Stroke="Black" VerticalAlignment="Center" Width="1"/>
-        <TextBox Visibility="Hidden" x:Name="ceck1" HorizontalAlignment="Left" Margin="59,352,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="239" Height="82"/>
+        <TextBox Visibility="Visible" x:Name="ceck1" HorizontalAlignment="Left" Margin="59,352,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="239" Height="82"/>
     </Grid>
 
 </Window>

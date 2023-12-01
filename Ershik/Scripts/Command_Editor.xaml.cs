@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -57,7 +59,7 @@ namespace Ershik
         {
             Commands.Items.Clear();
             foreach (var r in Commands_List)
-                Commands.Items.Add(new TextBlock() { Text = r.Length>39?r.Substring(0, 39) +"...":r, FontSize = 20 });
+                Commands.Items.Add(new TextBlock() { Text = r, FontSize = 20 });
         }
         private void Commands_List_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -106,6 +108,34 @@ namespace Ershik
         private void Discard_Changes_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void LaunchScript_Click(object sender, RoutedEventArgs e)
+        {
+            Commands.SelectedIndex = Commands_List.Count - 1;
+            MessageBox.Show("Выберите файл для открытия");
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            Nullable<bool> result = openFileDialog.ShowDialog();
+
+            if (result == true)
+            {
+                string filename = openFileDialog.FileName;
+                Current_Command.Text =$"\"{filename}\"";
+            }
+        }
+
+        private void CloseScript_Click(object sender, RoutedEventArgs e)
+        {
+            Commands.SelectedIndex = Commands_List.Count - 1;
+            MessageBox.Show("Выберите файл приложения");
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            Nullable<bool> result = openFileDialog.ShowDialog();
+
+            if (result == true)
+            {
+                string filename = openFileDialog.FileName;
+                Current_Command.Text = $"taskkill /F /IM \"{filename.Split('\\').Last()}\"";
+            }
         }
     }
 }

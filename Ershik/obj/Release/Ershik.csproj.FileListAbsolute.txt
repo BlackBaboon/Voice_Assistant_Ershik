@@ -67,3 +67,11 @@ D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Release\Ershik.csproj.
 D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Release\Ershik.csproj.CopyComplete
 D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Release\Ershik.exe
 D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Release\Ershik.pdb
+D:\ёрш\Ershik.exe.config
+D:\ёрш\Ershik.exe.manifest
+D:\ёрш\Ershik.application
+D:\ёрш\Ershik.exe
+D:\ёрш\Ershik.pdb
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Release\Ershik.TrustInfo.xml
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Release\Ershik.exe.manifest
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Release\Ershik.application

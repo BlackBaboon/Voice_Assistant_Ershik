@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows;
+using System.IO;
 
 namespace Ershik
 {
@@ -66,7 +67,7 @@ namespace Ershik
             public static void Delete_Profile(string profile)
             {
                 App.Connection.Open();
-                SqlCommand cmd = new SqlCommand($"exec Delete_Profile {profile}'", App.Connection);
+                SqlCommand cmd = new SqlCommand($"exec Delete_Profile '{profile}'", App.Connection);
 
                 cmd.ExecuteNonQuery();
                 App.Connection.Close();
@@ -352,6 +353,36 @@ namespace Ershik
                 }
                 if(bytest)
                     MessageBox.Show("Фраза выполнена");
+            }
+        }
+
+        public static class Restore
+        {
+            public static void Create_Copy()
+            {
+                App.Connection.Open();
+                MessageBox.Show($"BACKUP DATABASE [VoiceAssistant_Ershik] to DISK = '{Directory.GetCurrentDirectory()}\\Backup.bak' \r\nWITH NOFORMAT");
+                SqlCommand cmd = new SqlCommand($"BACKUP DATABASE [VoiceAssistant_Ershik] to DISK = '{Directory.GetCurrentDirectory()}\\Backup.bak' \r\nWITH NOFORMAT", App.Connection);
+
+                cmd.ExecuteNonQuery();
+                App.Connection.Close();
+            }
+            public static void Restore_Copy()
+            {
+                App.Connection.Open();
+
+                SqlCommand cmd = new SqlCommand($"RESTORE DATABASE [VoiceAssistant_Ershik] from DISK = '{Directory.GetCurrentDirectory()}\\Backup.bak' " +
+                    $"with REPLACE " +
+                    $"IF NOT EXISTS(SELECT * FROM sys.symmetric_keys WHERE name = '##MS_ServiceMasterKey##') BEGIN " +
+                    $"CREATE MASTER KEY ENCRYPTION BY PASSWORD = 'MSSQLSerivceMasterKey' END; IF NOT EXISTS (SELECT * FROM sys.symmetric_keys WHERE name LIKE '%MS_DatabaseMasterKey%')\r\nBEGIN " +
+                    $"CREATE MASTER KEY ENCRYPTION BY PASSWORD = '14881488'; END; IF NOT EXISTS (SELECT * FROM sys.asymmetric_keys " +
+                    $"WHERE name = 'LoginInformationKey') BEGIN z   " +
+                    $"CREATE ASYMMETRIC KEY LoginInformationKey WITH ALGORITHM = RSA_2048 ENCRYPTION BY PASSWORD = '14881488';" +
+                    $";END select * from Profile insert into Profile values('0','0','00000') ALTER TABLE Profile  ADD Password_E varbinary(MAX) NULL " +
+                    $"UPDATE E SET Password_E = ENCRYPTBYASYMKEY(ASYMKEY_ID('LoginInformationKey'), Password)\r\nFROM Profile AS E; SELECT * FROM Profile SELECT *, Password_Enc = CONVERT(nvarchar(24), DECRYPTBYASYMKEY(ASYMKEY_ID('LoginInformationKey'), Password_E, N'14881488'))\r\nFROM Profile; INSERT INTO Profile VALUES ('00', '0', '0', ENCRYPTBYASYMKEY( ASYMKEY_ID('LoginInformationKey'), N'00000'));  select * from Profile SELECT *,  Password_Enc = CONVERT(nvarchar(24), DECRYPTBYASYMKEY(ASYMKEY_ID('LoginInformationKey'), Password_E, N'14881488')) FROM Profile; ALTER TABLE Profile DROP COLUMN Password; EXEC sp_rename 'Profile.Password_E', 'Password', 'COLUMN';\r\n\r\nSELECT *, Password_Enc = CONVERT(nvarchar(24), DECRYPTBYASYMKEY(ASYMKEY_ID('LoginInformationKey'), Password, N'14881488')) FROM Profile;", App.Connection);
+
+                cmd.ExecuteNonQuery();
+                App.Connection.Close();
             }
         }
     }

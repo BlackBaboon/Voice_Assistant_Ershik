@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ershik"
         mc:Ignorable="d"
-        Title="Cal_Editor" Height="720" Width="1280">
+        Title="Редактор скриптов" Height="720" Width="1280">
     <Grid Background="#FF2B0061">
         <Button  Style="{DynamicResource RoundedButtonStyle}" x:Name="Add_Command" Content="Сохранить команду" HorizontalAlignment="Left" Margin="10,361,0,0" VerticalAlignment="Top" Height="47" Width="274" Click="Add_Command_Click" FontSize="20"/>
         <TextBox x:Name="Current_Command" AcceptsReturn="True" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="708" Height="342" FontSize="20" Background="#FF212121" Foreground="White"/>
@@ -47,6 +47,9 @@
         </Button>
         <Button x:Name="Discard_Changes" Style="{DynamicResource RoundedButtonStyle}" Content="Отмена" HorizontalAlignment="Left" Margin="1028,102,0,0" VerticalAlignment="Top" Height="48" Width="158" FontSize="20" Click="Discard_Changes_Click" />
         <Button x:Name="Save_Changes_Copy" Style="{DynamicResource RoundedButtonStyle}" Content="Сохранить изменения" HorizontalAlignment="Left" Margin="736,102,0,0" VerticalAlignment="Top" Height="48" Width="233"  Click="Save_Changes_Click" FontSize="20"/>
+        <Button x:Name="LaunchScript" Content="     Запуск&#xD;&#xA;приложения" Style="{DynamicResource RoundedButtonStyle}" HorizontalAlignment="Left" Margin="10,495,0,0" VerticalAlignment="Top" Height="134" Width="140" HorizontalContentAlignment="Center" Click="LaunchScript_Click"/>
+        <Label FontSize="20" Foreground="White" Content="Шаблоны:" HorizontalAlignment="Left" Margin="10,434,0,0" VerticalAlignment="Top" Height="43" Width="174"/>
+        <Button x:Name="CloseScript" Content="Закрытие&#xD;&#xA;процесса" Style="{DynamicResource RoundedButtonStyle}" HorizontalAlignment="Left" Margin="224,495,0,0" VerticalAlignment="Top" Height="134" Width="140" HorizontalContentAlignment="Center" Click="CloseScript_Click"/>
 
     </Grid>
 </Window>

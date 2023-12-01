@@ -75,6 +75,8 @@ namespace Ershik {
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "4.0.0.0")]
         public static void Main() {
+            SplashScreen splashScreen = new SplashScreen("116395-1.jpg");
+            splashScreen.Show(true);
             Ershik.App app = new Ershik.App();
             app.InitializeComponent();
             app.Run();

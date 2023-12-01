@@ -63,5 +63,29 @@ namespace Ershik
             this.DialogResult = false;
             this.Close();
         }
+
+        private void RestoreCopy_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Database_interaction.Restore.Restore_Copy();
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void CreateCopy_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Database_interaction.Restore.Create_Copy();
+                MessageBox.Show("Восстановление завершено, перезапустите приложение");
+                App.Current.Shutdown();
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка восстановления");
+            }
+
+        }
     }
 }

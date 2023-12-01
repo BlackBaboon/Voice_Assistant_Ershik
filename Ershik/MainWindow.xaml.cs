@@ -148,7 +148,7 @@ namespace Ershik
                     voice_to_text = "";
                 }
             }
-            if(voice_to_text.ToLower().Contains("ёршик") & !on_write)
+            if(voice_to_text.ToLower().Contains("олежа") & !on_write)
             {
                 counter = 0;
                 on_write = true;

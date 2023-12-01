@@ -42,6 +42,7 @@ namespace Ershik
             }
             catch
             {
+                MessageBox.Show("Ошибка добавления скрипта");
                 this.DialogResult = false;
                 this.Close();
             }

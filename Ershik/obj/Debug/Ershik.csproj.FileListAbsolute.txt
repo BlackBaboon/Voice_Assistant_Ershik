@@ -106,3 +106,8 @@ D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Debug\System.Buffers.x
 D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Debug\System.Memory.xml
 D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Debug\System.Numerics.Vectors.xml
 D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Debug\Ershik.exe.manifest
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\bin\Debug\Ershik.application
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\Ershik.TrustInfo.xml
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\Ershik.exe.manifest
+D:\Прочее\Курсач ЗАПРА\Ershik\Ershik\obj\Debug\Ershik.application
