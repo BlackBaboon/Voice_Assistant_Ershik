@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Ershik.exe" size="104448">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Ershik.exe" size="146944">
       <assemblyIdentity name="Ershik" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>XMe9/712100vtPrGFLBJJgKHAmufhKzJXmTP6VK869Q=</dsig:DigestValue>
+        <dsig:DigestValue>CXxaK4FqAo8P2cvl3OrCp4SG7oyBIyKQr7hlnRDAZxA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
